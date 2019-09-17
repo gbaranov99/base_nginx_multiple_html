@@ -1,0 +1,46 @@
+sudo docker run -it --rm \
+-v /docker-volumes/etc/letsencrypt:/etc/letsencrypt \
+-v /docker-volumes/var/lib/letsencrypt:/var/lib/letsencrypt \
+-v /home/fresh/Websites/gbaranov/gbaranov-site:/data/letsencrypt \
+-v "/docker-volumes/var/log/letsencrypt:/var/log/letsencrypt" \
+certbot/certbot \
+certonly --webroot \
+--register-unsafely-without-email --agree-tos \
+--webroot-path=/data/letsencrypt \
+--staging \
+-d gbaranov.com -d www.gbaranov.com
+
+sudo docker run -it --rm \
+-v /docker-volumes/etc/letsencrypt:/etc/letsencrypt \
+-v /docker-volumes/var/lib/letsencrypt:/var/lib/letsencrypt \
+-v /home/fresh/Websites/gbaranov/gbaranov-site:/data/letsencrypt \
+-v "/docker-volumes/var/log/letsencrypt:/var/log/letsencrypt" \
+certbot/certbot \
+certonly --webroot \
+--email gbaranov99@gmail.com --agree-tos --no-eff-email \
+--webroot-path=/data/letsencrypt \
+-d gbaranov.com -d www.gbaranov.com
+
+
+sudo docker run -it --rm \
+-v /docker-volumes/etc/letsencrypt:/etc/letsencrypt \
+-v /docker-volumes/var/lib/letsencrypt:/var/lib/letsencrypt \
+-v /home/fresh/Websites/totrno/totrno-site:/data/letsencrypt \
+-v "/docker-volumes/var/log/letsencrypt:/var/log/letsencrypt" \
+certbot/certbot \
+certonly --webroot \
+--register-unsafely-without-email --agree-tos \
+--webroot-path=/data/letsencrypt \
+--staging \
+-d totrno.com -d www.totrno.com
+
+sudo docker run -it --rm \
+-v /docker-volumes/etc/letsencrypt:/etc/letsencrypt \
+-v /docker-volumes/var/lib/letsencrypt:/var/lib/letsencrypt \
+-v /home/fresh/Websites/totrno/totrno-site:/data/letsencrypt \
+-v "/docker-volumes/var/log/letsencrypt:/var/log/letsencrypt" \
+certbot/certbot \
+certonly --webroot \
+--email gbaranov99@gmail.com --agree-tos --no-eff-email \
+--webroot-path=/data/letsencrypt \
+-d totrno.com -d www.totrno.com
