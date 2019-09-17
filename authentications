@@ -1,3 +1,8 @@
+Commands that can be selected and run to enable letsencrypt on websites
+Only the necessary phrases must be changed
+Top block is for testing, second is for actual encryption and last two are for gbaranov instead of totrno
+
+
 sudo docker run -it --rm \
 -v /docker-volumes/etc/letsencrypt:/etc/letsencrypt \
 -v /docker-volumes/var/lib/letsencrypt:/var/lib/letsencrypt \
