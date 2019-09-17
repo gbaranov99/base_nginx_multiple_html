@@ -12,9 +12,14 @@ services:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
 
       - ./gbaranov/gbaranov-site:/usr/share/nginx/gbaranov/gbaranov-site/html
+      - ./gbaranov/dh-param/dhparam-2048.pem:/etc/ssl/certs/gbaranov/dhparam-2048.pem
+      - /docker-volumes/etc/letsencrypt/live/gbaranov.com/fullchain.pem:/etc/letsencrypt/live/gbaranov.com/fullchain.pem
+      - /docker-volumes/etc/letsencrypt/live/gbaranov.com/privkey.pem:/etc/letsencrypt/live/gbaranov.com/privkey.pem
 
       - ./totrno/totrno-site:/usr/share/nginx/totrno/totrno-site/html
-    
+      - ./totrno/dh-param/dhparam-2048.pem:/etc/ssl/certs/totrno/dhparam-2048.pem
+      - /docker-volumes/etc/letsencrypt/live/totrno.com/fullchain.pem:/etc/letsencrypt/live/totrno.com/fullchain.pem
+      - /docker-volumes/etc/letsencrypt/live/totrno.com/privkey.pem:/etc/letsencrypt/live/totrno.com/privkey.pem
     networks:
       - docker-network
 
